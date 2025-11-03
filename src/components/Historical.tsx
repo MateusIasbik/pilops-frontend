@@ -14,7 +14,7 @@ export default function Historical() {
 }
 
 const HistoricalStyled = styled.div`
-    width: 96%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     margin-bottom: 2%;

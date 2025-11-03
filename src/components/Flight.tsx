@@ -1,29 +1,12 @@
 import path from "../../public/path.png";
 import styled from "styled-components";
-import type { AxiosInstance } from "axios";
-import { useEffect, useState } from "react";
 import type { Flight } from "../types";
 
 type FlightProps = {
-    api: AxiosInstance;
+    flight: Flight;
 };
 
-export default function Flight({ api }: FlightProps) {
-    const [flight, setFlight] = useState<Flight | null>(null);
-
-    useEffect(() => {
-        api.get<Flight[]>("/flights")
-            .then(response => {
-                setFlight(response.data[0]);
-            })
-            .catch(error => {
-                console.error("Error fetching flight:", error);
-            });
-    }, [api]);
-
-    if (!flight) {
-        return <div>Carregando voo...</div>;
-    }
+export default function Flight({ flight }: FlightProps) {
 
     return (
         <ContainerStyled>
@@ -66,8 +49,9 @@ export default function Flight({ api }: FlightProps) {
 }
 
 const ContainerStyled = styled.div`
-    width: 96%;
-    display: flex;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     border: 1px solid #444;
     background-color: #212121;
     border-radius: 5px;
@@ -114,6 +98,12 @@ const PathStyled = styled.div`
 
     img {
         height: 36px;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
     }
 `;
 
