@@ -1,35 +1,65 @@
 import path from "../../public/path.png";
 import styled from "styled-components";
+import type { AxiosInstance } from "axios";
+import { useEffect, useState } from "react";
+import type { Flight } from "../types";
 
-export default function Flight() {
+type FlightProps = {
+    api: AxiosInstance;
+};
+
+export default function Flight({ api }: FlightProps) {
+    const [flight, setFlight] = useState<Flight | null>(null);
+
+    useEffect(() => {
+        api.get<Flight[]>("/flights")
+            .then(response => {
+                setFlight(response.data[0]);
+            })
+            .catch(error => {
+                console.error("Error fetching flight:", error);
+            });
+    }, [api]);
+
+    if (!flight) {
+        return <div>Carregando voo...</div>;
+    }
+
     return (
         <ContainerStyled>
             <InformationStyled>
-                <h2>Name</h2>
-                <p>Airline</p>
+                <h2>{flight.aircraft.name}</h2>
+                <p>{flight.aircraft.airline}</p>
             </InformationStyled>
 
             <PathStyled>
                 <img src={path} alt="trajeto" />
                 <DepartureArrivalStyled>
-                    <div>from</div>
-                    <div>to</div>
+                    <div>{flight.flightData.route.from}</div>
+                    <div>{flight.flightData.route.to}</div>
                 </DepartureArrivalStyled>
             </PathStyled>
 
             <InformationStyled>
                 <h3>Matrícula</h3>
-                <p>REGISTRATION</p>
+                <p>{flight.aircraft.registration}</p>
             </InformationStyled>
 
             <InformationStyled>
                 <h3>Data</h3>
-                <p>10/10/2010</p>
+                <p>
+                    {new Date(flight.flightData.date).toLocaleDateString('pt-BR')}
+                </p>
             </InformationStyled>
 
             <InformationStyled>
                 <h3>Saldo</h3>
-                <BalanceStyled>P$ 5.000</BalanceStyled>
+                <BalanceStyled $positive={flight.flightData.balance >= 0}>
+                    {flight.flightData.balance < 0 ? '-' : ''}P$ {Math.abs(flight.flightData.balance).toLocaleString('pt-BR', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    })}
+                </BalanceStyled>
             </InformationStyled>
         </ContainerStyled>
     );
@@ -98,10 +128,10 @@ const DepartureArrivalStyled = styled.div`
     font-weight: 400;
 `;
 
-const BalanceStyled = styled.div`
+const BalanceStyled = styled.div<{ $positive: boolean }>`
     font-size: 14px;
     font-weight: 700;
     font-size: 16px;
     font-weight: 600;
-    color: green
+    color: ${props => (props.$positive ? '#00FF88' : '#FF0000')};
 `;

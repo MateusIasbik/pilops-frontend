@@ -3,15 +3,14 @@ import styled from "styled-components";
 import Top from './components/Top';
 import Historical from './components/Historical';
 import Flight from "./components/Flight";
+import api from "./api";
 
 export default function App() {
-  // const [count, setCount] = useState(0)
-
   return (
       <ContainerStyled>
         <Top/>
         <Historical/>
-        <Flight/>
+        <Flight api={api}/>
       </ContainerStyled>
   )
 }
