@@ -14,10 +14,10 @@ export default function Flight({ flight }: FlightProps) {
         <Link to={`/flights/${flight.id}`} state={flight} style={{ textDecoration: "none", color: "inherit", width: "100%", display: "flex", justifyContent: "center" }}>
 
             <ContainerStyled>
-                <InformationStyled>
+                <InformationFirstStyled>
                     <h2>{flight.aircraft.name}</h2>
                     <p>{flight.aircraft.airline}</p>
-                </InformationStyled>
+                </InformationFirstStyled>
 
                 <PathStyled>
                     <img src={path} alt="trajeto" />
@@ -67,20 +67,32 @@ const ContainerStyled = styled.div`
     margin-bottom: 21px;
 `;
 
-const InformationStyled = styled.div`
+const InformationFirstStyled = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-family: 'Manrope', 'Roboto', sans-serif;
+    margin-left: 30px;
 
     h2 {
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 10px;
         color: #FFF;
-        ;
     }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        color: #E0E0E0;
+    }
+`;
+
+const InformationStyled = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manrope', 'Roboto', sans-serif;
 
     p {
         font-size: 14px;
