@@ -1,50 +1,56 @@
 import path from "../../public/path.png";
 import styled from "styled-components";
 import type { Flight } from "../types";
+import { Link } from "react-router-dom";
 
 type FlightProps = {
-    flight: Flight;
+    // readonly indica que a propriedade não pode ser alterada dentro do componente
+    readonly flight: Flight;
 };
 
 export default function Flight({ flight }: FlightProps) {
 
     return (
-        <ContainerStyled>
-            <InformationStyled>
-                <h2>{flight.aircraft.name}</h2>
-                <p>{flight.aircraft.airline}</p>
-            </InformationStyled>
+        <Link to={`/flights/${flight.id}`} state={flight} style={{ textDecoration: "none", color: "inherit", width: "100%", display: "flex", justifyContent: "center" }}>
 
-            <PathStyled>
-                <img src={path} alt="trajeto" />
-                <DepartureArrivalStyled>
-                    <div>{flight.flightData.route.from}</div>
-                    <div>{flight.flightData.route.to}</div>
-                </DepartureArrivalStyled>
-            </PathStyled>
+            <ContainerStyled>
+                <InformationStyled>
+                    <h2>{flight.aircraft.name}</h2>
+                    <p>{flight.aircraft.airline}</p>
+                </InformationStyled>
 
-            <InformationStyled>
-                <h3>Matrícula</h3>
-                <p>{flight.aircraft.registration}</p>
-            </InformationStyled>
+                <PathStyled>
+                    <img src={path} alt="trajeto" />
+                    <DepartureArrivalStyled>
+                        <div>{flight.flightData.route.from}</div>
+                        <div>{flight.flightData.route.to}</div>
+                    </DepartureArrivalStyled>
+                </PathStyled>
 
-            <InformationStyled>
-                <h3>Data</h3>
-                <p>
-                    {new Date(flight.flightData.date).toLocaleDateString('pt-BR')}
-                </p>
-            </InformationStyled>
+                <InformationStyled>
+                    <h3>Matrícula</h3>
+                    <p>{flight.aircraft.registration}</p>
+                </InformationStyled>
 
-            <InformationStyled>
-                <h3>Saldo</h3>
-                <BalanceStyled $positive={flight.flightData.balance >= 0}>
-                    {flight.flightData.balance < 0 ? '-' : ''}P$ {Math.abs(flight.flightData.balance).toLocaleString('pt-BR', {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2
-                    })}
-                </BalanceStyled>
-            </InformationStyled>
-        </ContainerStyled>
+                <InformationStyled>
+                    <h3>Data</h3>
+                    <p>
+                        {new Date(flight.flightData.date).toLocaleDateString('pt-BR')}
+                    </p>
+                </InformationStyled>
+
+                <InformationStyled>
+                    <h3>Saldo</h3>
+                    <BalanceStyled $positive={flight.flightData.balance >= 0}>
+                        {flight.flightData.balance < 0 ? '-' : ''}P$ {Math.abs(flight.flightData.balance).toLocaleString('pt-BR', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        })}
+                    </BalanceStyled>
+                </InformationStyled>
+            </ContainerStyled>
+
+        </Link>
     );
 }
 
