@@ -1,73 +1,125 @@
-# React + TypeScript + Vite
+✈️ Pilops Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend do projeto Pilops, desenvolvido em React + TypeScript com Vite e styled-components. O sistema consome a API do backend (Render) e exibe:
 
-Currently, two official plugins are available:
+📋 Lista de voos (com dados vindos da API)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📑 Detalhes de cada voo ao clicar em um card
 
-## React Compiler
+🎨 Estilização com styled-components
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🎬 Animação de loading com Lottie
 
-## Expanding the ESLint configuration
+Deploy disponível em: Pilops Frontend (Vercel)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🚀 Tecnologias utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+React + TypeScript
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Vite
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+styled-components
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+React Router DOM
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Axios
+
+Lottie React
+
+---
+
+📦 Pré-requisitos
+
+Antes de começar, você precisa ter instalado na sua máquina:
+
+Node.js (versão 18 ou superior recomendada)
+
+npm
+
+---
+
+⚙️ Como rodar o projeto localmente
+
+Clonar o repositório
+
+bash
+git clone https://github.com/seu-usuario/pilops-frontend.git
+cd pilops-frontend
+Instalar dependências
+
+bash
+npm install
+ou
+
+bash
+yarn install
+
+--
+
+Configurar variáveis de ambiente Crie um arquivo .env na raiz do projeto com a URL do backend:
+
+.env
+VITE_API_BASE_URL=https://seu-backend.onrender.com
+
+--
+
+Rodar em ambiente de desenvolvimento
+
+bash
+npm run dev
+
+--
+
+O projeto estará disponível em: 👉 http://localhost:5173
+
+--
+
+Gerar build de produção
+
+bash
+npm run build
+Pré-visualizar build
+
+bash
+npm run preview
+
+---
+
+🗂 Estrutura do projeto
+Código
+src/
+ ├─ components/       # Componentes reutilizáveis (Top, Historical, Flight, FlightDetails)
+ ├─ api.tsx           # Configuração do Axios
+ ├─ App.tsx           # Definição de rotas e lógica principal
+ ├─ main.tsx          # Ponto de entrada do React
+ └─ types.ts          # Tipos TypeScript (Flight, Aircraft, etc.)
+
+---
+
+🌐 Deploy
+
+O projeto está configurado para deploy na Vercel.
+
+Build command: npm run build
+
+Output directory: dist
+
+---
+
+✨ Funcionalidades
+
+Listagem de voos consumindo a API
+
+Navegação entre lista e detalhes com React Router
+
+Layout responsivo com styled-components
+
+Animação de loading com Lottie
+
+Deploy contínuo na Vercel
+
+---
+
+Desenvolvido por Mateus
