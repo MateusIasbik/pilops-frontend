@@ -46,7 +46,7 @@ export default function FlightDetails() {
                             <div>
                                 <p>Ganhos totais</p>
                                 <BalanceStyled $positive={flight.flightData.balance >= 0}>
-                                    {flight.flightData.balance < 0 ? '-' : ''}P$ {Math.abs(flight.flightData.balance).toLocaleString('pt-BR', {
+                                    {flight.flightData.balance < 0 ? '-' : ''}{Math.abs(flight.flightData.balance).toLocaleString('pt-BR', {
                                         minimumFractionDigits: 2,
                                         maximumFractionDigits: 2
                                     })}
@@ -55,28 +55,22 @@ export default function FlightDetails() {
                         </ContentRewardsStyled>
 
                         <ContentRewardsStyled>
-                            <h3>P$</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#38BDF8"><path d="M852-212 732-332l56-56 120 120-56 56ZM708-692l-56-56 120-120 56 56-120 120Zm-456 0L132-812l56-56 120 120-56 56ZM108-212l-56-56 120-120 56 56-120 120Zm246-75 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-361Z"/></svg>
                             <div>
-                                <p>Ganhos totais</p>
-                                <BalanceStyled $positive={flight.flightData.balance >= 0}>
-                                    {flight.flightData.balance < 0 ? '-' : ''}P$ {Math.abs(flight.flightData.balance).toLocaleString('pt-BR', {
-                                        minimumFractionDigits: 2,
-                                        maximumFractionDigits: 2
-                                    })}
-                                </BalanceStyled>
+                                <p>XP CONQUISTADO</p>
+                                <span>
+                                    {flight.flightData.xp.toLocaleString('pt-BR')}
+                                </span>
                             </div>
                         </ContentRewardsStyled>
 
                         <ContentRewardsStyled>
-                            <h3>P$</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#38BDF8"><path d="m363-310 117-71 117 71-31-133 104-90-137-11-53-126-53 126-137 11 104 90-31 133ZM480-28 346-160H160v-186L28-480l132-134v-186h186l134-132 134 132h186v186l132 134-132 134v186H614L480-28Zm0-112 100-100h140v-140l100-100-100-100v-140H580L480-820 380-720H240v140L140-480l100 100v140h140l100 100Zm0-340Z"/></svg>
                             <div>
-                                <p>Ganhos totais</p>
-                                <BalanceStyled $positive={flight.flightData.balance >= 0}>
-                                    {flight.flightData.balance < 0 ? '-' : ''}P$ {Math.abs(flight.flightData.balance).toLocaleString('pt-BR', {
-                                        minimumFractionDigits: 2,
-                                        maximumFractionDigits: 2
-                                    })}
-                                </BalanceStyled>
+                                <p>Bônus de missão</p>
+                                <span>
+                                    {flight.flightData.missionBonus}%
+                                </span>
                             </div>
                         </ContentRewardsStyled>
                     </ContentDownStyled>
@@ -148,7 +142,7 @@ const RewardsStyled = styled.div`
     background-color: #212121;
     border: 1px solid #444;
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 10px 40px;
     font-family: 'Manrope', 'Roboto', sans-serif;
 
     h2 {
@@ -184,9 +178,6 @@ const ContentDownStyled = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 15px 0;
-    font-family: 'Manrope', 'Roboto', sans-serif;
-    font-size: 14px;
-    font-style: 400;
     color: #E0E0E0;
 
 `;
@@ -195,6 +186,7 @@ const ContentRewardsStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
 
     h3 {        
         font-size: 16px;
@@ -203,14 +195,24 @@ const ContentRewardsStyled = styled.div`
         color: #1A1A1A;
         padding: 10px;
         border-radius: 50%;
-        margin-right: 10px;
     }
+
+    p {
+        font-family: 'Manrope', 'Roboto', sans-serif;
+        font-size: 14px;
+        font-style: 400;
+    }
+
+    span {
+        font-family: 'Sora', 'Manrope', 'Roboto', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+}
 `;
 
 const BalanceStyled = styled.div<{ $positive: boolean }>`
-    font-size: 14px;
+    font-family: 'Sora', 'Manrope', 'Roboto', sans-serif;
+    font-size: 32px;
     font-weight: 700;
-    font-size: 16px;
-    font-weight: 600;
     color: ${props => (props.$positive ? '#00FF88' : '#FF0000')};
 `;
