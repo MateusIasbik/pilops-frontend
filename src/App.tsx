@@ -28,7 +28,7 @@ export default function App() {
   if (flight.length === 0) {
     return <LoadingStyled>
       {/* Lottie é uma biblioteca que permite usar um arquivo json para se tornar uma animação*/}
-      <Lottie animationData={loadingAnimation} loop={true} style={{ width: 400, height: 400 }} />
+      <Lottie animationData={loadingAnimation} loop={true} style={{ width: 300, height: 300 }} />
     </LoadingStyled>;
   }
 
@@ -70,6 +70,6 @@ const LoadingStyled = styled.div`
   background-color: #1A1A1A;
   
   @media (max-width: 768px) {
-    margin: 20px 0;
+    padding: 0 20px;
   }
 `;
