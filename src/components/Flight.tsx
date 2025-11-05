@@ -103,6 +103,7 @@ const InformationFirstStyled = styled.div`
         align-items: center;
         justify-content: center;
         margin: 20px auto;
+        padding: 0 10px;
     }
 `;
 
