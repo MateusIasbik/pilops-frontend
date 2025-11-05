@@ -11,7 +11,6 @@ export default function FlightDetails() {
     // Use o hook useLocation para pegar o estado passado pelo Link
     const location = useLocation();
     const flight: Flight = location.state; // O "flight" vem do estado passado
-    console.log(flight);
 
     // Use o hook useNavigate para navegar programaticamente
     const navigate = useNavigate();
@@ -297,8 +296,8 @@ const InformationStyled = styled.div`
 
 const PathStyled = styled.div`
     display: flex;
+    display: flex;
     flex-direction: column;
-    align-items: center;
 
     img {
         height: 36px;
@@ -307,7 +306,7 @@ const PathStyled = styled.div`
     div {
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 `;
 
@@ -316,7 +315,7 @@ const DepartureArrivalStyled = styled.div`
     display: flex;
     color: #E0E0E0;
     align-items: center;
-    justify-content: start;
+    justify-content: space-around;
     margin-top: 4px;
     font-family: 'Manrope', 'Roboto', sans-serif;
     font-size: 14px;
