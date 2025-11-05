@@ -356,8 +356,8 @@ const PathStyled = styled.div`
         margin: 20px auto;
 
         img {
-            height: 40px;
-            width: 100px;
+            height: 36px;
+            width: 110px;
         }
     }
 `;
