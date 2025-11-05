@@ -122,7 +122,6 @@ const ContainerStyled = styled.div`
 
 const ContentStyled = styled.div`
     width: 90%;
-    
 `;
 
 const BackButton = styled.span`
@@ -141,6 +140,7 @@ const TitleStyled = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+        margin-top: 140px;
     
     h1 {
         font-size: 24px;
@@ -149,6 +149,10 @@ const TitleStyled = styled.div`
         font-family: 'Manrope', 'Roboto', sans-serif;
         padding-top: 2px;
     }
+/* 
+    @media (max-width: 768px) {
+        margin-top: 100px;
+    } */
 `;
 
 const StyledLessThan = styled.span`

@@ -68,4 +68,8 @@ const LoadingStyled = styled.div`
   font-size: 24px;
   font-family: 'Manrope', 'Roboto', sans-serif;
   background-color: #1A1A1A;
+  
+  @media (max-width: 768px) {
+      margin: 20px;
+  }
 `;

@@ -21,7 +21,10 @@ const ContainerStyled = styled.div`
     font-family: 'Manrope', 'Roboto', sans-serif;
     font-size: 15px;
     font-weight: 400;
-    margin: 4% 0;
+        margin-top: 0px;
+        padding: 20px 0;
+        background-color: #1A1A1A;
+        position: fixed;
     
     img {
         width: 197px;
@@ -31,4 +34,9 @@ const ContainerStyled = styled.div`
     p {
         text-align: center;;
     }
+
+    /* @media (max-width: 768px) {
+        padding: 10px 0;
+        width: 100%;
+    } */
 `; 

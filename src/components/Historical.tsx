@@ -18,6 +18,7 @@ const HistoricalStyled = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 2%;
+        margin-top: 140px;
 
     h1 {
         font-family: 'Sora', 'Roboto', sans-serif;
