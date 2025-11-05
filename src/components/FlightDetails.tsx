@@ -114,6 +114,10 @@ const ContainerStyled = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    @media (max-width: 768px) {
+        height: auto;
+    }
 `;
 
 const ContentStyled = styled.div`
@@ -205,6 +209,12 @@ const ContentDownStyled = styled.div`
     margin: 15px 0;
     color: #E0E0E0;
 
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin: 8px 0;
+    }
 `;
 
 const ContentRewardsStyled = styled.div`
@@ -232,7 +242,11 @@ const ContentRewardsStyled = styled.div`
         font-family: 'Sora', 'Manrope', 'Roboto', sans-serif;
         font-size: 32px;
         font-weight: 700;
-}
+    }
+
+    @media (max-width: 768px) {
+        margin: 14px 0;
+  }
 `;
 
 const BalanceStyled = styled.div<{ $positive: boolean }>`
@@ -252,6 +266,16 @@ const InfoStyled = styled.div`
     border: 1px solid #444;
     border-radius: 8px;
     font-family: 'Manrope', 'Roboto', sans-serif;
+
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0;
+        padding: 10px 10px 40px 20px;
+    }
 `;
 
 const InformationFirstStyled = styled.div`
@@ -270,6 +294,13 @@ const InformationFirstStyled = styled.div`
         font-size: 14px;
         font-weight: 400;
         color: #E0E0E0;
+    }
+    
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
     }
 `;
 
@@ -292,6 +323,14 @@ const InformationStyled = styled.div`
         margin-bottom: 10px;
         color: #E0E0E0;
     }
+
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0px 0;
+        padding-top: 20px;
+    }
 `;
 
 const PathStyled = styled.div`
@@ -308,6 +347,19 @@ const PathStyled = styled.div`
         align-items: center;
         justify-content: space-between;
     }
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 20px auto;
+
+        img {
+            height: 40px;
+            width: 100px;
+        }
+    }
 `;
 
 const DepartureArrivalStyled = styled.div`
@@ -322,6 +374,11 @@ const DepartureArrivalStyled = styled.div`
     font-weight: 400;
 
     div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 16px;
+        font-weight: 600;
         color: #FFFFFF;
     }
 `;

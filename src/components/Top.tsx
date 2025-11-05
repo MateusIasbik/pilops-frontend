@@ -27,4 +27,8 @@ const ContainerStyled = styled.div`
         width: 197px;
         margin-bottom: 10px;
     }
+
+    p {
+        text-align: center;;
+    }
 `; 

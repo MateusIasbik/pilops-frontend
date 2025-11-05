@@ -65,6 +65,17 @@ const ContainerStyled = styled.div`
     align-items: center;
     justify-content: space-around;
     margin-bottom: 21px;
+
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px auto;
+        padding: 0;
+    }
 `;
 
 const InformationFirstStyled = styled.div`
@@ -84,6 +95,14 @@ const InformationFirstStyled = styled.div`
         font-size: 14px;
         font-weight: 400;
         color: #E0E0E0;
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
     }
 `;
 
@@ -106,6 +125,10 @@ const InformationStyled = styled.div`
         margin-bottom: 10px;
         color: #E0E0E0;
     }
+
+    @media (max-width: 768px) {
+        margin: 10px auto 18px auto;
+    }
 `;
 
 const PathStyled = styled.div`
@@ -122,6 +145,21 @@ const PathStyled = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-evenly;
+    }
+
+    @media (max-width: 768px) {
+        margin: 10px auto 20px auto;
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        img {
+            height: 30px;
+            width: 100px;
+        }
     }
 `;
 
