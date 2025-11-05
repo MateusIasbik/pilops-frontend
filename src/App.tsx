@@ -70,6 +70,6 @@ const LoadingStyled = styled.div`
   background-color: #1A1A1A;
   
   @media (max-width: 768px) {
-    padding: 0 20px;
+    padding: 0 4px;
   }
 `;
