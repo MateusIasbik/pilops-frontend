@@ -34,9 +34,4 @@ const ContainerStyled = styled.div`
     p {
         text-align: center;;
     }
-
-    /* @media (max-width: 768px) {
-        padding: 10px 0;
-        width: 100%;
-    } */
 `; 

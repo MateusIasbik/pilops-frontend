@@ -149,10 +149,6 @@ const TitleStyled = styled.div`
         font-family: 'Manrope', 'Roboto', sans-serif;
         padding-top: 2px;
     }
-/* 
-    @media (max-width: 768px) {
-        margin-top: 100px;
-    } */
 `;
 
 const StyledLessThan = styled.span`
