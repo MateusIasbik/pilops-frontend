@@ -21,10 +21,11 @@ const ContainerStyled = styled.div`
     font-family: 'Manrope', 'Roboto', sans-serif;
     font-size: 15px;
     font-weight: 400;
-        margin-top: 0px;
-        padding: 20px 0;
-        background-color: #1A1A1A;
-        position: fixed;
+    margin-top: 0px;
+    padding: 20px 0;
+    background-color: #1A1A1A;
+    position: fixed;
+    z-index: 2;
     
     img {
         width: 197px;
