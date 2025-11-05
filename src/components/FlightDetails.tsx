@@ -1,6 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import type { Flight } from "../types";
-import Top from "../components/Top";
 import styled from "styled-components";
 import { IonIcon } from '@ionic/react';
 import { trophyOutline } from 'ionicons/icons';
@@ -8,24 +7,20 @@ import path from "../../public/path.png";
 
 export default function FlightDetails() {
 
-    // Use o hook useLocation para pegar o estado passado pelo Link
+    // Usamos o hook useLocation para pegar o estado passado pelo Link
     const location = useLocation();
-    const flight: Flight = location.state; // O "flight" vem do estado passado
+    const flight: Flight = location.state; 
+    // O "flight" vem do estado passado
 
-    // Use o hook useNavigate para navegar programaticamente
     const navigate = useNavigate();
-
-    // Função para navegar de volta para a página inicial
     const goBack = () => {
-        navigate("/"); // Isso vai redirecionar para a página raiz (/)
+        navigate("/");
     };
 
     return (
         <ContainerStyled>
-            <Top>
-            </Top>
-
             <ContentStyled>
+                
                 <TitleStyled>
                     <BackButton onClick={goBack}>
                         <StyledLessThan>&lt;</StyledLessThan>
@@ -38,6 +33,7 @@ export default function FlightDetails() {
                         <IonIcon icon={trophyOutline} style={{ color: "#38BDF8", fontSize: "18px" }} />
                         <h2>Recompensas</h2>
                     </TopRewardsStyled>
+                    
                     <ContentDownStyled>
                         <ContentRewardsStyled>
                             <h3>P$</h3>

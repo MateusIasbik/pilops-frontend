@@ -4,8 +4,8 @@ import type { Flight } from "../types";
 import { Link } from "react-router-dom";
 
 type FlightProps = {
-    // readonly indica que a propriedade não pode ser alterada dentro do componente
     readonly flight: Flight;
+    // readonly indica que a propriedade não pode ser alterada dentro do componente
 };
 
 export default function Flight({ flight }: FlightProps) {

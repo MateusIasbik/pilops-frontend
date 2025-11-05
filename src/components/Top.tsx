@@ -24,6 +24,7 @@ const ContainerStyled = styled.div`
     margin-top: 0px;
     padding: 20px 0;
     background-color: #1A1A1A;
+    color: #FFFFFF;
     position: fixed;
     z-index: 2;
     
@@ -33,6 +34,6 @@ const ContainerStyled = styled.div`
     }
 
     p {
-        text-align: center;;
+        text-align: center;
     }
 `; 
