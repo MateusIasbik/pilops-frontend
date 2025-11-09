@@ -53,5 +53,7 @@ const LoadingStyled = styled.div`
   
   @media (max-width: 768px) {
     padding: 0 4px;
+    /* margin: 0; */
+    padding: 0;
   }
 `;
