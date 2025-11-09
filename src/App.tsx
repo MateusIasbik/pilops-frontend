@@ -31,15 +31,24 @@ export default function App() {
   }
 
   return (
-    <>
+    <ContainerStyled>
       <Top />
       <Routes>
         <Route path="/" element={<Flights flights={flights} />} />
         <Route path="/flights/:id" element={<FlightDetails />} />
       </Routes>
-    </>
+    </ContainerStyled>
   )
 }
+
+const ContainerStyled = styled.div`
+  
+  @media (max-width: 768px) {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+`;
 
 const LoadingStyled = styled.div`
   width: 100%;
@@ -53,7 +62,6 @@ const LoadingStyled = styled.div`
   
   @media (max-width: 768px) {
     padding: 0 4px;
-    /* margin: 0; */
     padding: 0;
   }
 `;
